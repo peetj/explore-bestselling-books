@@ -3,6 +3,21 @@
         display: flex;
         flex-flow: row;
     }
+
+    article {
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        padding: 5vh 2vw;
+    }
+
+    article:first-child {
+        padding-left: 0;
+    }
+
+    article:last-child {
+        padding-right: 0;
+    }
 }
 
 @media only screen and (min-width: 1024px) {
