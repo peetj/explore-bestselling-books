@@ -48,6 +48,45 @@ table {
 }
 
 /* Main Styles */
+body {
+    font-size: 16px;
+}
+
+header, main {
+    width: 80%;
+    margin: 5vh auto;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin: .5em 0;
+}
+
+h3 {
+    font-size: 1.25em;
+}
+
+h4 {
+    font-size: 1.15em;
+}
+
+h5, h6 {
+    font-size: 1.05em;
+}
+
+h5 {
+    font-weight: 700;
+}
+
+h6 {
+    font-weight: 300; 
+}
+
+
 img {
     border: 1px solid gray;
     /**width: 328px;
