@@ -9,7 +9,7 @@
     article {
         display: flex;
         flex-direction: column;
-        padding: 5vw 2vw;
+        margin: 5vw 2vw;
     }
 
     img {
