@@ -98,6 +98,6 @@ img {
     border: 1px solid gray;
     /**width: 328px;
     height: 495px;**/
-    width: 164px;
-    height: 247.5px;
+    width: 100%;
+    height: auto;
 }
