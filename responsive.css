@@ -2,21 +2,19 @@
     section {
         display: flex;
         flex-flow: row;
+        justify-content: flex-start;
+        flex-wrap: wrap;
     }
 
     article {
         display: flex;
         flex-direction: column;
-        box-sizing: border-box;
-        padding: 5vh 2vw;
+        padding: 5vw 2vw;
     }
 
-    article:first-child {
-        padding-left: 0;
-    }
-
-    article:last-child {
-        padding-right: 0;
+    img {
+        width: 164px;
+        height: 247.5px;
     }
 }
 
