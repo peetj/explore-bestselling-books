@@ -86,6 +86,13 @@ h6 {
     font-weight: 300; 
 }
 
+section {
+    margin: 10vh 0;
+}
+
+article {
+    margin: 5vh 0;
+}
 
 img {
     border: 1px solid gray;
