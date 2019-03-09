@@ -14,5 +14,9 @@ function closeModal() {
     })
 }
 
-openModal();
-closeModal();
+function handler() {
+    openModal();
+    closeModal();
+}
+
+$(handler);
