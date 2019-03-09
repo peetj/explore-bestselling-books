@@ -14,7 +14,26 @@ function closeModal() {
     })
 }
 
+//display quotes
+
+//filter list
+
+//display bestsellers list on load
+
+//fetch bestsellers list data from New York Times API
+function getBestSellers() {
+    const params = {
+
+    };
+
+    fetch(url) 
+        .then()
+        .then()
+        .catch();
+}
+
 function handler() {
+    getBestSellers();
     openModal();
     closeModal();
 }
