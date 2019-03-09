@@ -12,14 +12,14 @@
         margin: 5vw 2vw;
     }
 
-    img {
+    article img {
         width: 164px;
         height: 247.5px;
     }
 }
 
 @media only screen and (min-width: 1024px) {
-    img {
+    article img {
         width: 160px;
         height: 241px;
     }
