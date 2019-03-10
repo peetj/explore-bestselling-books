@@ -9,18 +9,57 @@
     article {
         display: flex;
         flex-direction: column;
-        margin: 5vw 2vw;
+        margin: 5vw auto;
+        width: 164px;
     }
 
     article img {
         width: 164px;
         height: 247.5px;
     }
+
+    
+    .quotes {
+        width: 45%;
+        margin-right: 2.5%;
+        left: 0;
+    }
+
+    .buy {
+        width: 45%;
+        margin-left: 2.5%;
+        right: 0;
+    }
 }
 
 @media only screen and (min-width: 1024px) {
+    article {
+        widows: 160px;
+    }
+
     article img {
         width: 160px;
         height: 241px;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    article {
+        display: flex;
+        flex-direction: column;
+        margin: 5vw 2vw;
+        width: 164px;
+    }
+
+    .quotes {
+        width: 45%;
+        margin-right: 2.5%;
+        left: 0;
+    }
+
+    .buy {
+        width: 45%;
+        margin-left: 2.5%;
+        right: 0;
     }
 }
