@@ -37,7 +37,7 @@ function displayBestSellers(responseJson) {
                     <h4>${responseBooks[i].title}</h4>
                     <h5>${responseBooks[i].author}</h5>
                     <a class="button quotes">Quotes</a>
-                    <a class="button buy">Buy</a>
+                    <a class="button buy" href="${responseBooks[i].amazon_product_url}">Buy</a>
             </article>`
         )
     }

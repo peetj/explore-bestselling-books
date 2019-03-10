@@ -154,4 +154,7 @@ blockquote {
     box-sizing: border-box;
     padding: 5px 13px;
     border: 0;
+    text-decoration: none;
+    color: white;
 }
+
