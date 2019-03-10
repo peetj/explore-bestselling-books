@@ -21,7 +21,7 @@ function closeModal() {
 }
 
 //display quotes
-function displayQuotes(quotesJson, bookAuthor, bookTitle) {
+function displayQuotes(quotesJson, bookAuthor) {
     
     const bookQuotes = quotesJson.quotes;
     console.log(bookAuthor);
@@ -60,7 +60,7 @@ function getQuotes(id) {
                 }
                 throw new Error(response.statusText);
             })
-            .then(quotesJson => displayQuotes(quotesJson, bookAuthor, bookTitle))
+            .then(quotesJson => displayQuotes(quotesJson, bookAuthor))
             .catch(error => $('#modal-content').append(`<p>We do not have quotes for this book yet.</p>`));
         }
     }
