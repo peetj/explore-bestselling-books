@@ -7,7 +7,7 @@ function openModal(responseBooks) {
         let modalID = $(this).parent().attr('id'); 
         $('.overlay').toggleClass('hidden');
         $('.modal').toggleClass('hidden');
-        displayQuotes(modalID);
+        getQuotes(modalID);
     })
     closeModal();
 }
@@ -20,7 +20,22 @@ function closeModal() {
 }
 
 //display quotes
-function displayQuotes(id) {
+function displayQuotes(quotesJson) {
+    
+    $('#modal').empty();
+
+    const bookQuotes = quotesJson.quotes;
+
+    for (let i = 0; i < bookQuotes.length; i++) {
+        $('.modal').append(
+            `<blockquote>
+                ${bookQuotes[i].quote}
+            </blockquote>`
+        )
+    }
+}
+
+function getQuotes(id) {
 
     //get title of responseBooks and create a url string for the quotes API
     
@@ -36,19 +51,21 @@ function displayQuotes(id) {
             const quotesQuery = `${quotesAppUrl}${joinTitle}`
 
             
-            $('#modal').append(
-                `<blockquote>
-                    
-                </blockquote>`
-            )
+            fetch(quotesQuery)
+                .then(quotesResponse => {
+                    //if (quotesResponse.ok) {
+                        return quotesResponse.json();
+                    //}
+                    //throw new Error(response.statusText);
+                })
+                .then(quotesJson => displayQuotes(quotesJson))
+                //.catch(error => alert(error.message));
         }
     }
 }
 
 //display bestsellers list on load
 function displayBestSellers(responseJson) {
-    console.log('working');
-
     $('section').empty();
 
     const responseBooks = responseJson.results.books;
@@ -88,7 +105,6 @@ function getBestSellers(key) {
 
     //combine url strings for fiction
     const fictionUrl = `https://api.nytimes.com/svc/books/v3/lists/${fictionString}`;
-    console.log(fictionUrl);
 
     fetch(fictionUrl) 
         .then(response => {
