@@ -1,6 +1,6 @@
 'use strict';
 
-const apiKey = 'AkAEIxTxeQFT0ZwI';
+const apiKey = '6Wzcjab7S4IeGCA4OB2zY0JPxfU3PwZq';
 
 function openModal() {
     $('.quotes').click(function() {
@@ -23,6 +23,17 @@ function closeModal() {
 //display bestsellers list on load
 function displayBestSellers(responseJson) {
     console.log('working');
+
+    $('section').empty();
+    $('section').append(
+        `<article>
+            <img src="img/example.jpg">
+                <h4>Title</h4>
+                <h5>Author</h5>
+                <button class="quotes">Quotes</button>
+                <button>Buy</button>
+        </article>`
+    )
 }
 
 function formatFictionString(paramsFiction) {
