@@ -11,6 +11,7 @@
         flex-direction: column;
         margin: 5vw auto;
         width: 164px;
+        height: 375px;
     }
 
     article img {
@@ -18,7 +19,12 @@
         height: 247.5px;
     }
 
-    
+    .quotes, .buy {
+        display: inline;
+        position: absolute;
+        bottom: 0;
+    }
+
     .quotes {
         width: 45%;
         margin-right: 2.5%;
