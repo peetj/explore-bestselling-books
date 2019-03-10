@@ -53,13 +53,13 @@ function getQuotes(id) {
             
             fetch(quotesQuery)
                 .then(quotesResponse => {
-                    //if (quotesResponse.ok) {
+                    if (quotesResponse.ok) {
                         return quotesResponse.json();
-                    //}
-                    //throw new Error(response.statusText);
+                    }
+                    throw new Error(response.statusText);
                 })
                 .then(quotesJson => displayQuotes(quotesJson))
-                //.catch(error => alert(error.message));
+                .catch(error => alert(error.message));
         }
     }
 }
