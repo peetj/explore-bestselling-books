@@ -160,6 +160,6 @@ blockquote {
     color: white;
 }
 
-#modal-content {
+div#modal-content {
     padding: 0 15px;
 }
