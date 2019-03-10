@@ -25,15 +25,20 @@ function displayBestSellers(responseJson) {
     console.log('working');
 
     $('section').empty();
-    $('section').append(
-        `<article>
-            <img src="img/example.jpg">
-                <h4>Title</h4>
-                <h5>Author</h5>
-                <button class="quotes">Quotes</button>
-                <button>Buy</button>
-        </article>`
-    )
+
+    const responseBooks = responseJson.results.books;
+
+    for (let i = 0; i <responseBooks.length; i++) {
+        $('section').append(
+            `<article>
+                <img src="${responseBooks[i].book_image}">
+                    <h4>${responseBooks[i].title}</h4>
+                    <h5>${responseBooks[i].author}</h5>
+                    <button class="quotes">Quotes</button>
+                    <button>Buy</button>
+            </article>`
+        )
+    }
 }
 
 function formatFictionString(paramsFiction) {
