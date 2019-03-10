@@ -7,6 +7,8 @@ function openModal() {
         $('.overlay').toggleClass('hidden');
         $('.modal').toggleClass('hidden');
     })
+
+    closeModal();
 }
 
 function closeModal() {
@@ -39,6 +41,8 @@ function displayBestSellers(responseJson) {
             </article>`
         )
     }
+
+    openModal();
 }
 
 function formatFictionString(paramsFiction) {

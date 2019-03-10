@@ -84,6 +84,7 @@ h5 {
 
 section {
     margin: 5vh 0;
+    z-index: 1;
 }
 
 article {
@@ -110,6 +111,7 @@ article img {
     height: 100%;
     background-color: gray;
     opacity: .4;
+    z-index: 2;
 }
 
 .modal {
@@ -124,6 +126,7 @@ article img {
     margin-left: -30%;
     box-sizing: border-box;
     padding: 60px;
+    z-index: 3;
 }
 
 #close-modal {
