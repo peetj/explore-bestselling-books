@@ -36,6 +36,29 @@
         margin-left: 2.5%;
         right: 0;
     }
+
+    .modal {
+        top: 20%;
+        display: flex;
+        width: 60%;
+        max-height: 60vh;
+        left: 50%;
+        margin-left: -30%;
+        box-sizing: border-box;
+        padding: 60px;
+    }
+
+    .hidden {
+        display: none;
+    }
+        
+    #close-modal {
+        display: flex;
+        align-self: flex-end;
+        margin-top: -40px;
+        margin-left: 40px;
+        position: fixed;
+    }
 }
 
 @media only screen and (min-width: 1024px) {
