@@ -16,22 +16,25 @@ function closeModal() {
     $('#close-modal').click(function() {
         $('.modal').toggleClass('hidden');
         $('.overlay').toggleClass('hidden');
+        $('#modal-content').empty();
     })
 }
 
 //display quotes
-function displayQuotes(quotesJson) {
+function displayQuotes(quotesJson, bookAuthor, bookTitle) {
     
-    $('#modal').empty();
-
     const bookQuotes = quotesJson.quotes;
-
+    console.log(bookAuthor);
     for (let i = 0; i < bookQuotes.length; i++) {
-        $('.modal').append(
-            `<blockquote>
-                ${bookQuotes[i].quote}
-            </blockquote>`
-        )
+        if (bookQuotes[i].author === bookAuthor) {
+            $('#modal-content').append(
+                `<blockquote>
+                    ${bookQuotes[i].quote}
+                    <footer>- ${bookQuotes[i].author}, from "${bookQuotes[i].publication}"</footer>
+                </blockquote>`
+            )
+        }
+        else return $('#modal-content').append(`<p>We do not have quotes for this book yet.</p>`);
     }
 }
 
@@ -45,21 +48,22 @@ function getQuotes(id) {
 
     for (let i = 0; i < articles.length; i++) {
         if (id === articles[i].id) {
-            const bookTitle = articles[i].firstChild.nextSibling.nextSibling.nextSibling.innerText.split(' ');
+            const bookTitle = articles[i].firstElementChild.nextElementSibling.innerText.split(' ');
+            const bookAuthor = articles[i].firstElementChild.nextElementSibling.nextElementSibling.innerText;
             const joinTitle = bookTitle.join('+');
-            const quotesAppUrl = 'https://goodquotesapi.herokuapp.com/title/'
-            const quotesQuery = `${quotesAppUrl}${joinTitle}`
+            const quotesAppUrl = 'https://goodquotesapi.herokuapp.com/title/';
+            const quotesQuery = `${quotesAppUrl}${joinTitle}`;
 
             
             fetch(quotesQuery)
-                .then(quotesResponse => {
-                    if (quotesResponse.ok) {
-                        return quotesResponse.json();
-                    }
-                    throw new Error(response.statusText);
-                })
-                .then(quotesJson => displayQuotes(quotesJson))
-                .catch(error => alert(error.message));
+            .then(quotesResponse => {
+                if (quotesResponse.ok) {
+                    return quotesResponse.json();
+                }
+                throw new Error(response.statusText);
+            })
+            .then(quotesJson => displayQuotes(quotesJson, bookAuthor, bookTitle))
+            .catch(error => $('#modal-content').append(`<p>We do not have quotes for this book yet.</p>`));
         }
     }
 }
