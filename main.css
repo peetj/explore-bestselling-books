@@ -127,6 +127,7 @@ article img {
     box-sizing: border-box;
     padding: 60px;
     z-index: 3;
+    overflow-y: scroll;
 }
 
 #close-modal {
