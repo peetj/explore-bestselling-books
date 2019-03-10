@@ -40,12 +40,14 @@
 
 @media only screen and (min-width: 1024px) {
     article {
-        widows: 160px;
+        width: 184px;
+        margin: 5vh 1vw;
+        height: 400px;
     }
 
     article img {
-        width: 160px;
-        height: 241px;
+        width: 184px;
+        height: 278px;
     }
 }
 
@@ -53,8 +55,14 @@
     article {
         display: flex;
         flex-direction: column;
-        margin: 5vw 2vw;
-        width: 164px;
+        margin: 5vh 1vw;
+        width: 200px;
+        height: 420px;
+    }
+
+    article img {
+        width: 200px;
+        height: 302px;
     }
 
     .quotes {

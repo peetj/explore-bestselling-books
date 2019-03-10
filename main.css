@@ -134,7 +134,7 @@ article img {
     display: flex;
     align-self: flex-end;
     margin-top: -40px;
-    margin-right: -40px;
+    margin-left: 40px;
     position: fixed;
 }
 

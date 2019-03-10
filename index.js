@@ -44,8 +44,6 @@ function getQuotes(id) {
     
     let articles = $('article').toArray();
 
-    $('#modal').empty();
-
     for (let i = 0; i < articles.length; i++) {
         if (id === articles[i].id) {
             const bookTitle = articles[i].firstElementChild.nextElementSibling.innerText.split(' ');
@@ -81,7 +79,7 @@ function displayBestSellers(responseJson) {
                 <h4>${responseBooks[i].title}</h4>
                 <h5>${responseBooks[i].author}</h5>
                 <a class="button quotes">Quotes</a>
-                <a class="button buy" href="${responseBooks[i].amazon_product_url}">Buy</a>
+                <a class="button buy" href="${responseBooks[i].amazon_product_url}" target="_blank">Buy</a>
             </article>`
         )
     }
