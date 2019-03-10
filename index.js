@@ -35,7 +35,7 @@ function displayBestSellers(responseJson) {
                     <h4>${responseBooks[i].title}</h4>
                     <h5>${responseBooks[i].author}</h5>
                     <button class="quotes">Quotes</button>
-                    <button>Buy</button>
+                    <button class="buy">Buy</button>
             </article>`
         )
     }
