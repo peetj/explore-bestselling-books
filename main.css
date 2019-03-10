@@ -87,7 +87,9 @@ section {
 }
 
 article {
-    margin: 5vh 0;
+    margin: 5vh auto;
+    width: 80%;
+    position: relative;
 }
 
 article img {
@@ -137,4 +139,9 @@ blockquote {
 
 .hidden {
     display: none;
+}
+
+.quotes, .buy {
+    display: block;
+    width: 100%;
 }
