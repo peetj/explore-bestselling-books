@@ -36,8 +36,8 @@ function displayBestSellers(responseJson) {
                 <img src="${responseBooks[i].book_image}">
                     <h4>${responseBooks[i].title}</h4>
                     <h5>${responseBooks[i].author}</h5>
-                    <button class="quotes">Quotes</button>
-                    <button class="buy">Buy</button>
+                    <a class="button quotes">Quotes</a>
+                    <a class="button buy">Buy</a>
             </article>`
         )
     }

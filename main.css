@@ -148,3 +148,10 @@ blockquote {
     display: block;
     width: 100%;
 }
+
+.button {
+    background-color: gray;
+    box-sizing: border-box;
+    padding: 5px 13px;
+    border: 0;
+}
