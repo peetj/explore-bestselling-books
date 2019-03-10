@@ -2,12 +2,13 @@
 
 const apiKey = '6Wzcjab7S4IeGCA4OB2zY0JPxfU3PwZq';
 
-function openModal() {
+function openModal(responseBooks) {
     $('.quotes').click(function() {
+        let modalID = $(this).parent().attr('id'); 
         $('.overlay').toggleClass('hidden');
         $('.modal').toggleClass('hidden');
+        displayQuotes(modalID);
     })
-
     closeModal();
 }
 
@@ -19,8 +20,30 @@ function closeModal() {
 }
 
 //display quotes
+function displayQuotes(id) {
 
-//filter list
+    //get title of responseBooks and create a url string for the quotes API
+    
+    let articles = $('article').toArray();
+
+    $('#modal').empty();
+
+    for (let i = 0; i < articles.length; i++) {
+        if (id === articles[i].id) {
+            const bookTitle = articles[i].firstChild.nextSibling.nextSibling.nextSibling.innerText.split(' ');
+            const joinTitle = bookTitle.join('+');
+            const quotesAppUrl = 'https://goodquotesapi.herokuapp.com/title/'
+            const quotesQuery = `${quotesAppUrl}${joinTitle}`
+
+            
+            $('#modal').append(
+                `<blockquote>
+                    
+                </blockquote>`
+            )
+        }
+    }
+}
 
 //display bestsellers list on load
 function displayBestSellers(responseJson) {
@@ -32,12 +55,12 @@ function displayBestSellers(responseJson) {
 
     for (let i = 0; i <responseBooks.length; i++) {
         $('section').append(
-            `<article>
+            `<article id="${i}">
                 <img src="${responseBooks[i].book_image}">
-                    <h4>${responseBooks[i].title}</h4>
-                    <h5>${responseBooks[i].author}</h5>
-                    <a class="button quotes">Quotes</a>
-                    <a class="button buy" href="${responseBooks[i].amazon_product_url}">Buy</a>
+                <h4>${responseBooks[i].title}</h4>
+                <h5>${responseBooks[i].author}</h5>
+                <a class="button quotes">Quotes</a>
+                <a class="button buy" href="${responseBooks[i].amazon_product_url}">Buy</a>
             </article>`
         )
     }
