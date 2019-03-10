@@ -102,7 +102,7 @@ article img {
 }
 
 .overlay {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -115,7 +115,7 @@ article img {
 }
 
 .modal {
-    position: absolute;
+    position: fixed;
     top: 20%;
     display: flex;
     width: 60%;
@@ -135,6 +135,7 @@ article img {
     align-self: flex-end;
     margin-top: -40px;
     margin-right: -40px;
+    position: fixed;
 }
 
 blockquote {
