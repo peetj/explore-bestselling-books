@@ -22,6 +22,8 @@ function closeModal() {
 
 //display quotes
 function displayQuotes(quotesJson, bookAuthor) {
+    // Flag to let us know if no quotes found
+    let quotesNotFound = false;
     
     const bookQuotes = quotesJson.quotes;
     console.log(bookAuthor);
@@ -34,8 +36,15 @@ function displayQuotes(quotesJson, bookAuthor) {
                 </blockquote>`
             )
         }
-        else return $('#modal-content').append(`<p>We do not have quotes for this book yet.</p>`);
+        else {
+            quotesNotFound = true;
+            break;
+        }
     }
+    
+    // Return only if nothing found
+    if(quotesNotFound)
+        return $('#modal-content').append(`<p>We do not have quotes for this book yet.</p>`);
 }
 
 function getQuotes(id) {
